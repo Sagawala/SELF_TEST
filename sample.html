@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript</title>
+</head>
+<body>
+    <h1 id="h1">welcome home</h1>
+
+    <h2 id="h2">bye</h2>
+
+    <button id="mybtn">SEND</button>
+    <p id="mydate"></p>
+</body>
+<script>
+    //KUANDIKA TEXT KUTUMIA JS
+    document.write("<h1>WELCOME</h1>")
+    //kubadilisha maneno
+  document.getElementById("h1").innerHTML="this is not your home"
+  document.getElementById("h2").innerHTML="go away zombie"
+  //kuweka button iwe inaonesh date
+ document.getElementById("mybtn").onclick=displayDate;
+ //function ya displaydate 
+ function  displayDate(){
+    document.getElementById("mydate").innerHTML=Date();
+ }
+
+</script>
+
+
+
+<script>
+
+//VARIABLES
+//var
+//var x;
+//x=10;
+//multi var
+var x=100,y=20;
+//print x ways
+document.write(x);
+console.log(x);
+
+//let
+/*let x;
+x="welcome";
+console.log(x)*/
+
+</script>
+</html>
