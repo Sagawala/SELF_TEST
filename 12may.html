@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Price Matcher</title>
+  </head>
+  <body>
+    <h1>PRICE MATCHER</h1>
+    <input type="text" id="price-input" placeholder="Enter a price...">
+    <button onclick="matchPrice()">Match</button>
+    <p id="result"></p>
+
+    <script>
+      function matchPrice() {
+        const priceInput = document.getElementById('price-input');
+        const pricePattern = /^\$\d+(,\d{3})*(\.\d{2})?$/;
+        const price = priceInput.value.trim();
+
+        if (pricePattern.test(price)) {
+          document.getElementById('result').textContent = `The price ${price} is valid.`;
+        } else {
+          document.getElementById('result').textContent = `The price ${price} is invalid.`;
+        }
+      }
+    </script>
+  </body>
+</html>
+
