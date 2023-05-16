@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Self-closing HTML tags</title>
+  </head>
+  <body>
+    <p>Valid self-closing HTML tags:</p>
+    <ul id="valid-tags"></ul>
+
+    <p>Invalid self-closing HTML tags:</p>
+    <ul id="invalid-tags"></ul>
+
+    <script>
+      const selfClosingTagRegExp = /<\w+\s*(\w+=".*"\s*)*\/>/;
+
+      const validTags = [
+        '<img src="foo.jpg" />',
+        '<img />',
+        '<a href="foo.html" id="stuff" />'
+      ];
+
+      const invalidTags = [
+        '</>',
+        '<img src= />'
+      ];
+
+      
+      validTags.forEach(tag => {
+        if (selfClosingTagRegExp.test(tag)) {
+          const li = document.createElement('li');
+          li.textContent = `${tag} is a valid self-closing HTML tag`;
+          document.getElementById('valid-tags').appendChild(li);
+        } else {
+          const li = document.createElement('li');
+          li.textContent = `${tag} is not a valid self-closing HTML tag`;
+          document.getElementById('invalid-tags').appendChild(li);
+        }
+      });
+
+      invalidTags.forEach(tag => {
+        if (selfClosingTagRegExp.test(tag)) {
+          const li = document.createElement('li');
+          li.textContent = `${tag} is a valid self-closing HTML tag`;
+          document.getElementById('valid-tags').appendChild(li);
+        } else {
+          const li = document.createElement('li');
+          li.textContent = `${tag} is not a valid self-closing HTML tag`;
+          document.getElementById('invalid-tags').appendChild(li);
+        }
+      });
+    </script>
+  </body>
+</html>

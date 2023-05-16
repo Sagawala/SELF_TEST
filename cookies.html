@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="sesame-street.js" type="text/javascript"></script>
+</head>
+<body>
+<h1>Whitaker's Desserts</h1>
+<h2 id="cookie-header">Whitaker's Cookie Jar:</h2>
+<ul id="cookie-jar">
+  <li class="cookie">Chocolate Chip</li>
+  <li class="cookie">Oatmeal raisin</li>
+  <li class="cookie">Macaroon</li>
+</ul>
+<p id="cookie-count"></p>
+<h2>Whitaker's Pie Cupboard:</h2>
+<ul id="pie-cupboard">
+</ul>
+<button id="moar-pie">Moar Pie!</button>
+
+<script type="text/javascript">
+  
+  document.getElementById("cookie-header").style.color = "#f7f16d";
+  
+  
+  const cookies = document.querySelectorAll("#cookie-jar .cookie");
+  const cookieCount = cookies.length;
+  document.getElementById("cookie-count").textContent = `${cookieCount}! There are ${cookieCount} cookie(s) in the cookie jar!`;
+
+  
+  setInterval(function() {
+    const cookies = document.querySelectorAll("#cookie-jar .cookie");
+    if (cookies.length > 0) {
+      const lastCookie = cookies[cookies.length - 1];
+      lastCookie.remove();
+      const cookieCount = cookies.length;
+      document.getElementById("cookie-count").textContent = `${cookieCount}! There are ${cookieCount} cookie(s) in the cookie jar!`;
+    }
+  }, 30000);
+</script>
+</body>
+</html>
